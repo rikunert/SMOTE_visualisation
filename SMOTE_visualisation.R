@@ -81,14 +81,17 @@ dat_plot = SMOTE(dat[,1:2],
                  as.numeric(dat[,3]),
                  K = 3, dup_size = 0)
 
-#fun_plot(show_edges = F, show_synth = F) + ggtitle('A typical machine learning problem: class imbalance')
-#ggsave('SMOTE_R_visualisation_1.png',width = 12.9, height = 5.42, scale = 0.9, dpi = 1000)
+fun_plot(show_edges = F, show_synth = T) + ggtitle('A typical machine learning problem: class imbalance')
+ggsave('SMOTE_R_visualisation_0.png',width = 12.9, height = 5.42, scale = 0.9, dpi = 1000)
 
-#fun_plot(show_edges = T, show_synth = F) + ggtitle('Addressing class imbalance problems of ML via SMOTE: connecting the dots')
-#ggsave('SMOTE_R_visualisation_2.png',width = 12.9, height = 5.42, scale = 0.9, dpi = 1000)
+fun_plot(show_edges = F, show_synth = F) + ggtitle('A typical machine learning problem: class imbalance')
+ggsave('SMOTE_R_visualisation_1.png',width = 12.9, height = 5.42, scale = 0.9, dpi = 1000)
 
-# fun_plot(show_edges = T, show_synth = T) + ggtitle('Addressing class imbalance problems of ML via SMOTE: synthesising new dots between existing dots')
-# ggsave('SMOTE_R_visualisation_3.png',width = 12.9, height = 5.42, scale = 0.9, dpi = 1000)
+fun_plot(show_edges = T, show_synth = F) + ggtitle('Addressing class imbalance problems of ML via SMOTE: connecting the dots')
+ggsave('SMOTE_R_visualisation_2.png',width = 12.9, height = 5.42, scale = 0.9, dpi = 1000)
+
+fun_plot(show_edges = T, show_synth = T) + ggtitle('Addressing class imbalance problems of ML via SMOTE: synthesising new dots between existing dots')
+ggsave('SMOTE_R_visualisation_3.png',width = 12.9, height = 5.42, scale = 0.9, dpi = 1000)
 
 fun_plot(show_edges = T, show_synth = F) + 
   geom_point(data = data.frame(Sepal.Length = 4.9, Sepal.Width = 3.0), aes(x = Sepal.Length, y = Sepal.Width),
